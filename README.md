@@ -14,6 +14,35 @@ This app is used in connection with Sinatra and ActiveRecord. You do not have to
 Download or fork the repository and bundle in terminal in order to use the required gems and dependencies.
 
 
+Naturally this should all you need to do:
+
+
+```ruby
+rake db:create:all
+```
+
+
+Then:
+
+
+```ruby
+rake db:migrate
+```
+
+
+Then:
+
+```ruby
+rake db:test:prepare
+```
+
+Run Rspec and it should all pass. Then you are ready to run ```ruby app.rb```
+in the terminal.  Go to ```localhost:4567```  to use to program.
+
+
+---------------------------------------
+---------------------------------------
+---------------------------------------
 If you are starting from scratch you should first make an important folder:  'config' -- with a ```database.yml``` file inside it.
 
 In your yml file will be :  
@@ -49,7 +78,7 @@ rake db:create_migration NAME=create_brands
 Next we will run:
 
 ```ruby
-rake db:create_migration NAME=create_venues
+rake db:create_migration NAME=create_stores
 
 ```
 
@@ -57,7 +86,7 @@ Lastly we will run:
 
 ```ruby
 
-rake db:create_migration NAME=create_concerts
+rake db:create_migration NAME=create_shoes
 
 ```
 
@@ -108,4 +137,4 @@ If you would like to improve and add more features and functionality, check my u
 5. As a shoe store "manager" or "cashier", I want to be able to see what date the shoe was purchased.
 
 
-These might be features which to add in the shoe class and shoes table in the database. I need a purchased_date field, color, and size column at least. 
+These might be features which to add in the shoe class and shoes table in the database. I need a purchased_date field, color, and size column at least.
