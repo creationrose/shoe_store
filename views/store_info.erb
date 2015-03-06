@@ -1,0 +1,42 @@
+<div class="container">
+
+<h1><%= @store.store_name %></h1>
+
+<h3>Select all brands in stock:</h3>
+
+<% if @brands.any? %>
+<form action="/stores/<%= @store.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <% @brands.each do |brand| %>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" name="brand_ids[]" value="<%= brand.id %>"><%= brand.brand_name %>
+    </label>
+  </div>
+  <% end %>
+</br>
+  <button class="btn btn-primary" type="submit">Add brands</button>
+</form>
+<% end %>
+
+<% if @store.brands.any? %>
+
+<h3>Here are carried brands:</h3>
+
+<ul>
+  <% @store.brands.each do |brand| %>
+  <li><%= brand.brand_name%></li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are no brands yet!
+<a href="/brands">Add more brands into the database here</a></p>
+<% end %>
+
+</br>
+<a href="/stores/<%= @store.id %>/edit">Edit This Store</a>
+
+</br>
+
+<a href="/">Return to Main Page</a>
+</div>
