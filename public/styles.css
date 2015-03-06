@@ -2,7 +2,6 @@ body {
   background-color: darkcyan;
   width: 80%;
   height: 80%;
-  font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
 
 }
 
@@ -31,7 +30,6 @@ h6
  {
   margin: 0 0 40px;
   text-transform: uppercase;
-  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
   color: white;
@@ -46,21 +44,21 @@ p {
 
 
 #brand-link {
-  border: 10px solid orange;
+  border: 5px solid orange;
 }
 
 #store-link {
-  border: 10px solid orange;
+  border: 5px solid orange;
 }
 
 a:link {
-  color: purple;
+  color: green;
 }
 
 a:visited {
-  color: orange;
+  color: white;
 }
 
 a:hover {
-  color: pink;
+  color: purple;
 }
