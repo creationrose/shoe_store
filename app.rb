@@ -43,3 +43,23 @@ get "/stores/:id" do
   @brands = Brand.all
   erb :store_info
 end
+
+patch "/brands/:id" do
+  brand_id = params["id"].to_i
+  @brand = Brand.find(brand_id)
+  @store_ids = params["store_ids"]
+  @brand.update({:store_ids => @store_ids})
+  @stores = Store.all
+  erb :brand_info
+end
+
+patch "/stores/:id" do
+  store_id = params["id"].to_i
+  @store = Store.find(store_id)
+  @brand_ids = params["brand_ids"]
+  if @brand_ids
+    @store.update({:brand_ids => @brand_ids})
+  end
+  @brands = Brand.all
+  erb(:store_info)
+end
